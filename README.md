@@ -33,15 +33,15 @@ def generate_image(name, number, template_path, output_path):
     template.show()
 
 if __name__ == "__main__":
-    # Replace 'D:\\1.xlsx' with the correct path to your Excel file
-    excel_file_path = r'D:\\1.xlsx'
+    # Replace 'D:\\pro1601\\1.xlsx' with the correct path to your Excel file
+    excel_file_path = r'D:\\pro1601\\1.xlsx'
 
     # Read Excel file into a pandas DataFrame
     df = pd.read_excel(excel_file_path) 
 
     # Replace these values with your desired template and output paths
     template_image_path = "D:/certificate.jpg"
-    output_image_path_prefix = "D:/Cert_"  # Prefix for output image names
+    output_image_path_prefix = "D:/pro1601/MPG_"  # Prefix for output image names
 
     # Iterate through rows in the DataFrame
     for index, row in df.iterrows():
@@ -50,7 +50,7 @@ if __name__ == "__main__":
         number = row['Number']
 
         # Generate output path for each row
-        output_image_path = f"{output_image_path_prefix}{name}-{number}.jpg"
+        output_image_path = f"{output_image_path_prefix}{name}-{number}.pdf"
         
         # Generate the image for each row
         generate_image(name, number, template_image_path, output_image_path)
